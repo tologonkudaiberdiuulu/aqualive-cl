@@ -72,6 +72,9 @@ const translations = {
         email: "Email Address",
         message: "Your Message",
         submit: "Send Message",
+        successTitle: "Message Sent!",
+        successText: "Thank you for reaching out. We'll get back to you soon.",
+        successClose: "Close",
       },
       info: {
         phone: "+996 997 41 00 01",
@@ -156,6 +159,9 @@ const translations = {
         email: "Электрондук почта",
         message: "Билдируунуз",
         submit: "Жонотуу",
+        successTitle: "Билдирүү жөнөтүлдү!",
+        successText: "Кайрылганыңыз үчүн рахмат. Жакында сиз менен байланышабыз.",
+        successClose: "Жабуу",
       },
       info: {
         phone: "+996 997 41 00 01",

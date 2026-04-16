@@ -1,7 +1,16 @@
+import { useState } from "react";
 import { useLang } from "../context/LanguageContext";
 
 export default function Contacts() {
   const { t } = useLang();
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setShowSuccess(true);
+    setForm({ name: "", email: "", message: "" });
+  };
 
   return (
     <section id="contacts" className="bg-white py-24">
@@ -21,7 +30,7 @@ export default function Contacts() {
         <div className="mt-16 grid gap-12 lg:grid-cols-2">
           {/* Form */}
           <form
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={handleSubmit}
             className="space-y-5 rounded-2xl border border-slate-100 bg-slate-50 p-8"
           >
             <div>
@@ -30,6 +39,9 @@ export default function Contacts() {
               </label>
               <input
                 type="text"
+                required
+                value={form.name}
+                onChange={(e) => setForm({ ...form, name: e.target.value })}
                 className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition-colors focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
               />
             </div>
@@ -39,6 +51,9 @@ export default function Contacts() {
               </label>
               <input
                 type="email"
+                required
+                value={form.email}
+                onChange={(e) => setForm({ ...form, email: e.target.value })}
                 className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition-colors focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
               />
             </div>
@@ -48,6 +63,9 @@ export default function Contacts() {
               </label>
               <textarea
                 rows={4}
+                required
+                value={form.message}
+                onChange={(e) => setForm({ ...form, message: e.target.value })}
                 className="w-full resize-none rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition-colors focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
               />
             </div>
@@ -106,6 +124,31 @@ export default function Contacts() {
           </div>
         </div>
       </div>
+
+      {/* Success Dialog */}
+      {showSuccess && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm">
+          <div className="mx-4 w-full max-w-sm rounded-2xl bg-white p-8 text-center shadow-2xl">
+            <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-green-100">
+              <svg className="h-7 w-7 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <h3 className="text-xl font-bold text-slate-900">
+              {t.contacts.form.successTitle}
+            </h3>
+            <p className="mt-2 text-sm text-slate-600">
+              {t.contacts.form.successText}
+            </p>
+            <button
+              onClick={() => setShowSuccess(false)}
+              className="mt-6 w-full rounded-xl bg-gradient-to-r from-primary-500 to-primary-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary-500/25 transition-all hover:shadow-xl hover:shadow-primary-500/30"
+            >
+              {t.contacts.form.successClose}
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
