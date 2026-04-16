@@ -74,9 +74,9 @@ const translations = {
         submit: "Send Message",
       },
       info: {
-        phone: "+996 312 900 123",
-        email: "info@aqualive.kg",
-        address: "Bishkek, Kyrgyz Republic",
+        phone: "+996 997 41 00 01",
+        email: "aqualiveinfokg@gmail.com",
+        address: "Kyrgyz Republic, Bishkek, Ibraimov Street, 103",
       },
     },
     footer: {
@@ -158,9 +158,9 @@ const translations = {
         submit: "Жонотуу",
       },
       info: {
-        phone: "+996 312 900 123",
-        email: "info@aqualive.kg",
-        address: "Бишкек, Кыргыз Республикасы",
+        phone: "+996 997 41 00 01",
+        email: "aqualiveinfokg@gmail.com",
+        address: "Кыргыз Республикасы, Бишкек, Ибраимов көчөсү, 103",
       },
     },
     footer: {

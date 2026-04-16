@@ -1,12 +1,8 @@
 import { useLang } from "../context/LanguageContext";
 
 const brands = [
-  { name: "Hach", color: "#0072CE" },
-  { name: "Thermo Fisher", color: "#E4002B" },
-  { name: "IKA", color: "#003DA5" },
-  { name: "Metop", color: "#2E7D32" },
-  { name: "Mettler Toledo", color: "#00247D" },
-  { name: "Agilent", color: "#E87722" },
+  { name: "IWA", color: "#0072CE", url: "https://iw-analytics.com/" },
+  { name: "AquaAnalytics", color: "#003DA5", url: "https://aquaanalytics-tekhnika.ru/" },
 ];
 
 export default function Brands() {
@@ -27,10 +23,13 @@ export default function Brands() {
           </p>
         </div>
 
-        <div className="mt-16 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6">
+        <div className="mt-16 grid grid-cols-2 gap-6 mx-auto max-w-lg">
           {brands.map((brand) => (
-            <div
+            <a
               key={brand.name}
+              href={brand.url}
+              target="_blank"
+              rel="noopener noreferrer"
               className="glass-light group flex h-28 items-center justify-center rounded-2xl shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
             >
               <span
@@ -39,7 +38,7 @@ export default function Brands() {
               >
                 {brand.name}
               </span>
-            </div>
+            </a>
           ))}
         </div>
       </div>
