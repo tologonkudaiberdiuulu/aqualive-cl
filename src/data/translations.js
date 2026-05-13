@@ -78,7 +78,7 @@ const translations = {
       },
       info: {
         phone: "+996 997 41 00 01",
-        email: "aqualiveinfokg@gmail.com",
+        email: "aqualivekg@outlook.com",
         address: "Kyrgyz Republic, Bishkek, Ibraimov Street, 103",
       },
     },
@@ -165,7 +165,7 @@ const translations = {
       },
       info: {
         phone: "+996 997 41 00 01",
-        email: "aqualiveinfokg@gmail.com",
+        email: "aqualivekg@outlook.com",
         address: "Кыргыз Республикасы, Бишкек, Ибраимов көчөсү, 103",
       },
     },
